@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="libs/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+  <script src="libs/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+  <link href="popup.css" rel="stylesheet">
+  <style>
+    .tab-button {
+      cursor: pointer;
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      display: inline-block;
+    }
+
+    .tab-button.active {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .tab-button.orange {
+      color: #d17b10;
+      background-color: #ffd699;
+    }
+
+    .tab-button.purple {
+      color: #6a0dad;
+      background-color: #d0a5f8;
+    }
+
+    .carousel-item {
+      scroll-snap-type: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <div id="overlay" class="hidden">
+      <div class="content" id="content">
+        <div class="box" id="login">
+          <!--<form id="fm1" action="/cas/login" method="post">-->
+          <section class="row">
+            <input class="form-control form-control-solid placeholder-no-fix" cssclass="required" csserrorclass="error"
+              id="username" type="text" accesskey="u" path="username" autocomplete="off" htmlescape="true"
+              placeholder="Username" name="username">
+          </section>
+          <section class="row">
+            <input class="form-control form-control-solid placeholder-no-fix" cssclass="required" csserrorclass="error"
+              type="password" id="password" accesskey="" path="password" autocomplete="off" htmlescape="true"
+              placeholder="Password" name="password">
+          </section>
+          <section class="row btn-row">
+            <input class="btn-submit" name="submit" id="submit" accesskey="l" value="LOGIN" tabindex="6" type="submit">
+          </section>
+          <!--</form>-->
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-buttons">
+      <div class="tab-button orange active" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0">
+          Assignments & Assessments
+      </div>
+      <div class="tab-button purple" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1">
+          Attendance
+      </div>
+  </div>
+    
+  </div>
+  <div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-inner">
+      <div id="contentContainer" class="carousel-item active">
+        <div class="loading d-flex align-items-center justify-content-center p-3">
+          <div class="spinner-border text-primary" role="status"></div>
+          <span class="ms-2">Loading content...</span>
+        </div>
+      </div>
+      <div id="attendanceContainer" class="carousel-item">
+        <div class="loading d-flex align-items-center justify-content-center p-3">
+          <div class="spinner-border text-primary" role="status"></div>
+          <span class="ms-2">Loading attendance data...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+
+</html>

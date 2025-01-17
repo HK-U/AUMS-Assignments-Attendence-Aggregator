@@ -1,0 +1,348 @@
+body {
+  width: 800px;
+  height: 400px;
+  max-height: 600px;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+  overflow-y: auto;
+  background-color: #fff;
+  color: #333;
+}
+
+
+.content-section {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 2px solid #89d1c2;
+  border-radius: 8px;
+  background-color: rgba(137, 209, 194, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.content-section:hover {
+  box-shadow: 0 2px 8px rgba(137, 209, 194, 0.3);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between; /* Pushes the button to the right */
+  align-items: center; /* Vertically aligns title and button */
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid #f8971d;
+}
+
+.section-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: #2a2a2a;
+}
+
+.loading {
+  color: #89d1c2;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.hidden {
+  display: none;
+  visibility:hidden;
+}
+
+.signin-modal {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.signin-modal h2 {
+  margin-top: 0;
+}
+
+.rename-button {
+  background-color: white;
+  color: teal;
+  border: 2px solid teal;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.rename-button:hover {
+  background-color: teal;
+  color: white;
+}
+
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(137, 209, 194, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#login {
+  width: 320px;
+  float: left;
+  margin-right: 20px;
+  padding-right: 50px;
+}
+
+
+#login .row {
+  padding: 10px 0;
+  
+}
+
+#login label {
+  display: block;
+  margin-bottom: 2px;
+}
+
+#login .check label {
+  display: inline;
+}
+
+#login input[type=text], #login input[type=password] {
+  font-size: 1.4em;
+  padding: 5px;
+}
+
+#login .btn-submit {
+  background-color: #f8971d !important;
+  border-color: #a55f1f !important;
+  border: 0;
+  padding: 10px 20px;
+  font-weight: bold;
+  color: white;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+#content {
+  background-color: #eceef1;
+  border-radius: 7px;
+  width: 340px;
+  margin: 4px auto 10px auto;
+  padding: 30px;
+  padding-top: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.form-control {
+  font-size: 14px;
+  font-weight: normal;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  box-shadow: none;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+.form-control:focus {
+  border-color: #999;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+  cursor: not-allowed;
+  background-color: #eeeeee;
+}
+.form-control.height-auto {
+  height: auto;
+}
+.form-control.form-control-solid {
+  background-color: #dde3ec;
+  border-color: #F1F3F8;
+  color: #A6B2BA;
+  height: 43px;
+  width: 100%;
+  
+  
+}
+.form-control.form-control-solid:focus {
+  border-color: #e3e7f1;
+}
+.form-control.form-control-solid::-moz-placeholder {
+  color: #acb7be;
+  opacity: 1;
+}
+.form-control.form-control-solid:-ms-input-placeholder {
+  color: #acb7be;
+}
+.form-control.form-control-solid::-webkit-input-placeholder {
+  color: #acb7be;
+}
+
+
+
+#contentContainer {
+  margin-top: 15px;
+  background-color: #fff;
+}
+
+#contentContainer img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid #89d1c2;
+}
+
+#contentContainer table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+
+#contentContainer th {
+  background-color: #89d1c2;
+  color: white;
+  font-weight: 600;
+  padding: 12px 8px;
+}
+
+#contentContainer th a {
+  color: #fff8e6; /* Light cream color that works well with both teal and orange */
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+#contentContainer th a:hover {
+  color: #ffd699; /* Lighter shade of orange */
+}
+
+#contentContainer th a:focus {
+  outline: 2px solid #ffd699;
+  outline-offset: 2px;
+}
+
+#contentContainer td {
+  border: 1px solid #89d1c2;
+  padding: 10px 8px;
+}
+
+#contentContainer tr:nth-child(even) {
+  background-color: rgba(137, 209, 194, 0.1);
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Adding some interactive elements */
+.content-section a {
+  color: #f8971d;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.content-section a:hover {
+  color: #d17b10;
+  text-decoration: underline;
+}
+
+/* Optional: Add a subtle accent for focused elements */
+.content-section:focus-within {
+  border-color: #f8971d;
+  outline: none;
+}
+
+.content-section a:not(th a) {
+  color: #f8971d;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.content-section a:not(th a):hover {
+  color: #d17b10;
+  text-decoration: underline;
+}
+
+/* Bootstrap table enhancements */
+.table {
+  margin-bottom: 1rem;
+  color: #212529;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody + tbody {
+  border-top: 2px solid #dee2e6;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.075);
+}
+
+.table-bordered {
+  border: 2px solid #89d1c2;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #89d1c2;
+}
+
+.table-borderless th,
+.table-borderless td,
+.table-borderless thead th,
+.table-borderless tbody + tbody {
+  border: 0;
+}
+
+.table-sm th,
+.table-sm td {
+  padding: 0.3rem;
+}
+
+/* Custom table row colors */
+.table-teal {
+  background-color: #d1f2eb;
+}
+
+.table-orange {
+  background-color: #ffe5b4;
+}
+
+#attendanceContainer th {
+  background-color: #450909; /* or any other dark color except black */
+  color: #fff; /* optional: set text color to white or any other light color */
+}

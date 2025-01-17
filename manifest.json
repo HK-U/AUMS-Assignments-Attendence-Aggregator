@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "Course Content Viewer",
+  "version": "2",
+  "description": "View course content from multiple links",
+  "permissions": [
+    "<all_urls>",
+    "activeTab",
+    "storage",
+    "cookies"
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+        "48": "icons/aums.ico"
+      }
+  },
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+  "id": "aums-assignments-addon@yourdomain.com",
+    "applications": {
+      "gecko": {
+        "id": "open-google1@example.com"
+        }
+      },
+  "icons": {
+      "48": "icons/aums.ico"
+    }
+    
+}

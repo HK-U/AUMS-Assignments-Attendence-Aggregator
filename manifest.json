@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "Course Content Viewer",
-  "version": "2",
+  "name": "AUMS Assignments & Attendence Aggregator",
+  "version": "2.1",
   "description": "View course content from multiple links",
   "permissions": [
     "<all_urls>",

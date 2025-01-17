@@ -19,7 +19,7 @@
   "id": "aums-assignments-addon@yourdomain.com",
     "applications": {
       "gecko": {
-        "id": "open-google1@example.com"
+        "id": "aums-assignments@example.com"
         }
       },
   "icons": {

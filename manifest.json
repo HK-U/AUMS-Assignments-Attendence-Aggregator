@@ -16,10 +16,10 @@
       }
   },
   "content_security_policy": "script-src 'self'; object-src 'self'",
-  "id": "aums-assignments-addon@yourdomain.com",
+  "id": "assignments4aums-addon@yourdomain.com",
     "applications": {
       "gecko": {
-        "id": "aums-assignments@example.com"
+        "id": "assignments-aums@example.com"
         }
       },
   "icons": {

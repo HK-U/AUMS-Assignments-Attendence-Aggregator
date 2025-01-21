@@ -52,6 +52,10 @@ function signinPrompt() {
 }
 
 async function getCredentials() {
+    if (debug == true){
+        const credentials = await signinPrompt();
+        return credentials;
+    }
     try {
         const result = await browser.storage.local.get(['user', 'pass']);
         const user = result.user;
@@ -209,8 +213,20 @@ async function performLogin(body) {
 }
 
 async function getCourseLinks() {
+    if(debug == true)
+    {
+        try {
+            const courseLinks = await scrapeCourseLinks();
+            return courseLinks;
+        } catch (scrapeError) {
+            console.error('Error scraping courseLinks:', scrapeError);
+            return null;
+        }
+    }
+    
     try {
         var result = await browser.storage.local.get(['courseLinks']);
+
         if (result.courseLinks && Array.isArray(result.courseLinks) && result.courseLinks.length > 0) {
             console.log("courseLinks found within persistent storage");
             return result.courseLinks;
@@ -449,7 +465,39 @@ async function displayAllContent() {
             }, 100);
         }
 
-    });
+        const button = document.createElement('button');
+        button.textContent = 'Re-get courses';
+        
+        button.style.padding = '5px 10px';
+        button.style.fontSize = '16px';
+        button.style.backgroundColor = '#D84B16';
+        button.style.color = '#fff';
+        button.style.border = 'none';
+        button.style.borderRadius = '8px';
+        button.style.cursor = 'pointer';
+        button.style.transition = 'background-color 0.3s ease';
+        
+        button.addEventListener('mouseover', () => {
+            button.style.backgroundColor = '#B34011';
+        });
+    
+        button.addEventListener('mouseout', () => {
+            button.style.backgroundColor = '#D84B16';
+        });
+    
+        document.body.appendChild(button);
+    
+        button.addEventListener('click', () => {
+            browser.storage.local.remove('courseLinks').then(() => {
+                console.log('courseLinks removed from storage');
+                displayAllContent();
+            }).catch((error) => {
+                console.error('Error removing courseLinks:', error);
+            });
+        });
+
+    });    
+
 }
 
 async function fetchAndExtractTableData(semester) {
@@ -657,7 +705,8 @@ document.addEventListener('DOMContentLoaded', () => {
         browser.storage.local.set({
             courseLinks: null,
             user: null,
-            pass: null
+            pass: null,
+            selectedSemester: null
         });
     }
     displayAllContent();

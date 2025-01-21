@@ -485,7 +485,7 @@ async function displayAllContent() {
             button.style.backgroundColor = '#D84B16';
         });
     
-        document.body.appendChild(button);
+        container.appendChild(button);
     
         button.addEventListener('click', () => {
             browser.storage.local.remove('courseLinks').then(() => {
